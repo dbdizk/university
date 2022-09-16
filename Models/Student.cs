@@ -25,14 +25,18 @@ namespace university.Models
             return result;
         }
 
-        public string GetOneStudent(){
+        public string GetOneStudent(int id){
             string result="";
-            Student singleStudent=new Student(1,"Eee", "Aaa");
-           
+            List<Student> studentsCollection=new List<Student>();
+            studentsCollection.Add(new Student(1,"Jim","Jones"));
+            studentsCollection.Add(new Student(2,"Lisa","Smith"));
+            studentsCollection.Add(new Student(3,"Ann","Smith"));
 
-            
-            result+=singleStudent.ID+" "+singleStudent.Fname+" "+singleStudent.Lname+"\n";
-            
+            foreach(Student stu in studentsCollection){
+                if(stu.ID==id){
+                result+=stu.ID+" "+stu.Fname+" "+stu.Lname+"\n";
+                }
+            }
             return result;
         }
     }

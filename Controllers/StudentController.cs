@@ -18,7 +18,10 @@ public class StudentController : ControllerBase
     [HttpGet("{id}")]
     public string GetOneStudent(int id) {
         Student objStudent=new Student();
-        string result=objStudent.GetOneStudent();
+        string result=objStudent.GetOneStudent(id);
+        if(result.Length==0){
+            result="Student ID not valid";
+        }
         Console.WriteLine(result);
         
         return result;
