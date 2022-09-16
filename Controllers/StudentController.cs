@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using university.Models;
 
 namespace university.Controllers;
 
@@ -7,8 +8,11 @@ namespace university.Controllers;
 public class StudentController : ControllerBase
 {
     [HttpGet()]
-    public string GetAllStudents() {
-        return "This will return all students.";
+    public string GetStudents() {
+        Student objStudent=new Student();
+        string result=objStudent.GetAllStudents();
+        Console.WriteLine(result);
+        return result;
     }
 
     [HttpGet("{id}")]
