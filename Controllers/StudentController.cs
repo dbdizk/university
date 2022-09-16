@@ -6,7 +6,7 @@ namespace university.Controllers;
 [Route("[controller]")]
 public class StudentController : ControllerBase
 {
-    [HttpGet("GetAllStudents")]
+    [HttpGet()]
     public string GetAllStudents() {
         return "This will return all students.";
     }
