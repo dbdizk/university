@@ -24,5 +24,16 @@ namespace university.Models
             }
             return result;
         }
+
+        public string GetOneStudent(){
+            string result="";
+            Student singleStudent=new Student(1,"Eee", "Aaa");
+           
+
+            
+            result+=singleStudent.ID+" "+singleStudent.Fname+" "+singleStudent.Lname+"\n";
+            
+            return result;
+        }
     }
 }

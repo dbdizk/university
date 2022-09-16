@@ -17,7 +17,11 @@ public class StudentController : ControllerBase
 
     [HttpGet("{id}")]
     public string GetOneStudent(int id) {
-        return "This will return a student which id=" + id;
+        Student objStudent=new Student();
+        string result=objStudent.GetOneStudent();
+        Console.WriteLine(result);
+        
+        return result;
     }
 
     [HttpPost()]
