@@ -16,15 +16,16 @@ public class StudentController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public string GetOneStudent(int id) {
+    public IActionResult GetOneStudent(int id) {
         Student objStudent=new Student();
         string result=objStudent.GetOneStudent(id);
         if(result.Length==0){
             result="Student ID not valid";
+            return NotFound(result);
         }
-        Console.WriteLine(result);
         
-        return result;
+        
+        return Ok(result);
     }
 
     [HttpPost()]

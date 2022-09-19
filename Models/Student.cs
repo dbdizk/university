@@ -39,5 +39,20 @@ namespace university.Models
             }
             return result;
         }
+
+        public string AddStudent(int id, string fn, string ln){
+            string result="";
+            List<Student> studentsCollection=new List<Student>();
+            studentsCollection.Add(new Student(1,"Jim","Jones"));
+            studentsCollection.Add(new Student(2,"Lisa","Smith"));
+            studentsCollection.Add(new Student(3,"Ann","Smith"));
+
+            foreach(Student stu in studentsCollection){
+                if(stu.ID==id){
+                result+=stu.ID+" "+stu.Fname+" "+stu.Lname+"\n";
+                }
+            }
+            return result;
+        }
     }
 }
