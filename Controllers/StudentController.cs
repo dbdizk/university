@@ -21,7 +21,7 @@ public class StudentController : ControllerBase
         string result=objStudent.GetOneStudent(id);
         if(result.Length==0){
             result="Student ID not valid";
-            return NotFound(result);
+            return NoContent();
         }
         
         
